@@ -1,0 +1,2 @@
+model," selected_features",details," train_score"," test_score"," parameters"
+HistGradientBoostingClassifier,"['race', 'sex', 'relationship', 'occupation', 'education', 'workclass', 'age']",,"0.846","0.836","{'random_state': 123, 'min_samples_leaf': 40, 'max_iter': 250, 'learning_rate': 0.026101572156825358}"
