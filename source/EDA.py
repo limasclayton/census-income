@@ -60,12 +60,13 @@ for c in df.columns:
 #sns.catplot(x='income_level_label', y='age', kind='box', data=df)
 
 # Correlation between hours_per_week and income_level
-#sns.catplot(x='income_level', y='hours_per_week', kind='violin',data=df)
+sns.catplot(x='income_level', y='hours_per_week', kind='violin',data=df)
 
 plt.show()
 
 # Conclusions
 # feature capital gain and captain loss apper not to make sense on the model due to their number of zeros.
-# do something with country, but excluding for now
-# Looks like good features race, sex, relationship, occupation(maybe), education, workclass, age
+# Do something with country, but excluding for now. Added to Catboost and
+# Looks like good features race, sex, relationship, occupation(maybe), education, workclass, age. They are!
+# Trying hours_per_week, sounds like a decent part of the >50k ate on the 50 hours per weak. Worked!
 # Becareful with unbalanced target class
