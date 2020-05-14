@@ -11,6 +11,7 @@ from sklearn.pipeline import Pipeline
 from sklearn.svm import SVC
 from sklearn.experimental import enable_hist_gradient_boosting
 from sklearn.ensemble import HistGradientBoostingClassifier
+from catboost import CatBoostClassifier
 from sklearn.metrics import plot_confusion_matrix, classification_report
 # paths
 dataset_path = "input/census_income_dataset.csv"
@@ -37,7 +38,19 @@ X_train, X_test, y_train, y_test = train_test_split(X_dummies, y=='>50K', strati
 print(X_train.shape, y_train.shape)
 print(X_test.shape, y_test.shape)
 
+X_train_cat, X_test_cat, y_train_cat, y_test_cat = train_test_split(X, y, test_size=0.3, random_state=RANDOM_STATE)
 # MODEL
+
+# Catboost
+#from_file = CatBoostClassifier()
+#from_file.load_model('cat')
+cat_features = ['race', 'sex', 'relationship', 'occupation', 'education', 'workclass']
+
+cat = CatBoostClassifier(cat_features=cat_features, random_seed=RANDOM_STATE)
+cat.fit(X_train_cat, y_train_cat)
+print('CatBoost train score: {:.3f}'.format(cat.score(X_train_cat, y_train_cat)))
+print('CatBoost test score: {:.3f}'.format(cat.score(X_test_cat, y_test_cat)))
+cat.save_model('cat',pool=X_train_cat)
 
 # HistGradientBoostingClassifier
 param_distributions_hgb = {
