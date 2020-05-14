@@ -1,3 +1,5 @@
 model," selected_features",details," train_score"," test_score"," parameters"
+CatBoostClassifier,"['race', 'sex', 'relationship', 'occupation', 'education', 'workclass', 'age', 'hours_per_week']","","0.855","0.846",""
+CatBoostClassifier,"['race', 'sex', 'relationship', 'occupation', 'education', 'workclass', 'age']",,"0.848","0.841",""
+HistGradientBoostingClassifier,"['race', 'sex', 'relationship', 'occupation', 'education', 'workclass', 'age', 'hours_per_week']","","0.850","0.840","{'random_state': 123, 'min_samples_leaf': 30, 'max_iter': 150, 'learning_rate': 0.05623413251903491}"
 HistGradientBoostingClassifier,"['race', 'sex', 'relationship', 'occupation', 'education', 'workclass', 'age']",,"0.846","0.836","{'random_state': 123, 'min_samples_leaf': 40, 'max_iter': 250, 'learning_rate': 0.026101572156825358}"
-CatBoostClassifier,"['race', 'sex', 'relationship', 'occupation', 'education', 'workclass', 'age']","","0.848","0.841",""
