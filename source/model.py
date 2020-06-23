@@ -13,14 +13,14 @@ from sklearn.experimental import enable_hist_gradient_boosting
 from sklearn.ensemble import HistGradientBoostingClassifier
 from catboost import CatBoostClassifier
 from sklearn.metrics import plot_confusion_matrix, classification_report
+
+# variables
+RANDOM_STATE = 123
+
 # paths
 dataset_path = "input/census_income_dataset.csv"
 
 # reading
-df = pd.read_csv(dataset_path)
-
-# variables
-RANDOM_STATE = 123
 df = pd.read_csv(dataset_path)
 
 # PREPROCESSING
